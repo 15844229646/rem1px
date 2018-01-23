@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=0.5,minimum-scale=0.5,maximum-scale=0.5,user-scalable=no" /> -->
+    <meta name="viewport" content="width=device-width,initial-scale=0.5,minimum-scale=0.5,maximum-scale=0.5,user-scalable=no" />
+    <script>
+    //屏幕适配
+    (function(pwidth,prem){
+            var html = document.getElementsByTagName("html")[0];
+            var oWidth = screen.width*2 || document.documentElement.clientWidth || document.body.clientWidth;
+
+            if(oWidth>pwidth){
+              oWidth = pwidth;
+            }
+            html.style.fontSize = oWidth/pwidth*prem + "px";
+    })(750,100)
+
+    //禁用 ios10 以上的双指缩放 
+    document.addEventListener('touchstart', function (event) {
+        if (event.touches.length> 1) {
+            event.preventDefault();
+        }
+    });
+    </script>
+    <style>
+        .wrap{position:absolute;top:0;left:0;bottom:0;right:0;background:#fefefe; max-width: 1024px; margin: 0 auto;}
+        .title{width:100%;height:0.98rem;line-height:0.98rem;color:#fff;background:#e02222;text-align: center;font-size:0.32rem;}
+        .border{ border-bottom: 1px solid #999; height: 300px; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="title">首页</div>
+
+        <div class="border"></div>
+    </div>
+</body>
+
+</html
